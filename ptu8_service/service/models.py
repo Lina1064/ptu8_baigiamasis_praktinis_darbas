@@ -41,7 +41,7 @@ class Order(models.Model):
     @property
     def total_order_price(self):
         total = 0
-        for line in self.servicelines.all():
+        for line in self.service_orders.all():
             total+=line.total_price
         return total
 
@@ -71,7 +71,7 @@ class ServiceOrder(models.Model):
     order = models.ForeignKey(
         Order,
         on_delete=models.PROTECT,
-        related_name='order_lines',
+        related_name='service_orders',
         verbose_name=_('orders'),
     )
     quantity = models.PositiveIntegerField(_('quantity'), default=1)
