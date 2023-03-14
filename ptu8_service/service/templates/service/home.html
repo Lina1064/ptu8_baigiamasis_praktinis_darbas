@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>Welcome!</h1>
+<p>Some information about our services:</p>
+<ul>
+    <li>{{ service_count }} services we provide</li>
+    <li>We have {{ customer_count }} customers</li>
+    <li>{{ done_order_count }} of completed orders</li>
+</ul>
+{% endblock content %}
