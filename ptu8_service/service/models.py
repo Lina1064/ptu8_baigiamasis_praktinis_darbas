@@ -83,4 +83,3 @@ class ServiceOrder(models.Model):
     
     def __str__(self) -> str:
         return f"{self.service} {self.order} {self.quantity} {self.total_price}"
-
