@@ -3,7 +3,7 @@ body {
     padding: 0;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 50px calc(100vh - 100px) 50px;
+    grid-template-rows: 55px calc(100vh - 105px) 50px;
     grid-template-areas: 
         "header"
         "main"
@@ -12,8 +12,8 @@ body {
 }
 header {
     grid-area: header;
-    background-color: #123;
-    border-bottom: 2px solid #346;
+    background-color: rgb(208, 215, 219);
+    border-bottom: 2px solid rgb(139, 173, 241);
     width: 100%;
     flex-wrap: nowrap;
     overflow: hidden;
@@ -26,11 +26,22 @@ main {
 footer {
     grid-area: footer;
     width: 100%;
+    background-color: rgb(208, 215, 219);
+    border-top: 2px solid rgb(139, 173, 241);
+}
+header .container, main .container, footer .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+main .container, footer.container {
+    padding: 0 16px;
 }
 a {
-    color: rgb(204, 231, 238);
+    color: rgb(19, 73, 87);
     text-decoration: none;
-    background-color: #fff3;
+    background-color: rgba(37, 11, 11, 0.2);
 
    
 }
@@ -39,7 +50,8 @@ header ul {
     flex-direction: row;
     justify-content: flex-start;
     padding-inline-start: 0;
-    margin: 8px;
+    margin: 8px 0;
+    gap: 16px;
 }
 header ul li {
     display: inline-block;
@@ -47,9 +59,10 @@ header ul li {
 header ul li a {
     padding: 8px 16px;
     display: block;
+    border-radius: 8px;
 }
 .logo {
-    color: #fff;
+    color: #2065cc;
     font-size: 125%;
     font-weight: 600;
     padding: 4px 16px;
