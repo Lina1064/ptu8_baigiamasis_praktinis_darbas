@@ -15,18 +15,22 @@ class Customer(models.Model):
 
     class Meta:
         ordering = ['last_name', 'first_name']
+        verbose_name =_('customer')
+        verbose_name_plural = _('customers')
 
 
 class Service(models.Model):
     name = models.CharField(_('name'), max_length=100, db_index=True)
     price = models.DecimalField(_('price'), max_digits=8, decimal_places=2)
+    description = models.TextField(_('description'), max_length=4000, null=True, blank=True)
 
     def __str__(self) -> str:
         return f"{self.name} {self.price}"
     
     class Meta:
         ordering = ['name']
-
+        verbose_name =_('service')
+        verbose_name_plural = _('services')
 
 class Order(models.Model):
     date = models.DateTimeField(_('order date'), auto_now_add=True)
@@ -59,6 +63,8 @@ class Order(models.Model):
 
     class Meta:
         ordering = ['date']
+        verbose_name =_('order')
+        verbose_name_plural = _('orders') 
 
 
 class ServiceOrder(models.Model):
@@ -83,3 +89,8 @@ class ServiceOrder(models.Model):
     
     def __str__(self) -> str:
         return f"{self.service} {self.order} {self.quantity} {self.total_price}"
+    
+    class Meta:
+        ordering = ['order']
+        verbose_name =_('service order')
+        verbose_name_plural = _('service orders') 

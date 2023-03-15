@@ -8,12 +8,14 @@
     <title>{% block title %}OEPM Service{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'admin/css/fonts.css' %}">
     <link rel="stylesheet" href="{% static 'service/css/style.css' %}">
+    <style>{% block style %}{% endblock style %}</style>
 </head>
 <body>
     <header>
         <ul>
             <li class="logo">OEPM Service</li>
             <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
         </ul>
         </header>
     <main>{% block content %}{% endblock content %}</main>
