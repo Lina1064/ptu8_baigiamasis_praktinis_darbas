@@ -23,6 +23,7 @@ class Service(models.Model):
     name = models.CharField(_('name'), max_length=100, db_index=True)
     price = models.DecimalField(_('price'), max_digits=8, decimal_places=2)
     description = models.TextField(_('description'), max_length=4000, null=True, blank=True)
+    schematic = models.ImageField(_('schematic'), upload_to='service/schematics/', null=True, blank=True)
 
     def __str__(self) -> str:
         return f"{self.name} {self.price}"

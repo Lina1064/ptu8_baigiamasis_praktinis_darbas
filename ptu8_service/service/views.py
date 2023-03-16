@@ -16,7 +16,11 @@ def home(request):
     })
 
 def services(request):
-    paginator = Paginator(models.Service.objects.all(), 10)
+    queryset = models.Service.objects
+    query = request.GET.get('search')
+    if query:
+        queryset = queryset.filter(name__icontains=query)
+    paginator = Paginator(queryset.all(), 10)
     page_number = request.GET.get('page')
     services = paginator.get_page(page_number)
     return render (request, 'service/services.html', {

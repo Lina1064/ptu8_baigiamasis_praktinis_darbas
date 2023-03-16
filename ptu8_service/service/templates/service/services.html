@@ -2,6 +2,7 @@
 {% block title %}Services in {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>Services</h1>
+{% include 'service/includes/search.html' %}
 {% if services %}
 <ul class="services">
     {% for service in services %}
@@ -12,10 +13,11 @@
     {% include 'service/includes/paginator.html' %}
 {% endwith %}
 {% else %}
-    <p>We do not currently provide any services</p>
+    <p>We do not currently provide any services matching your query.</p>
 {% endif %}
 {% endblock content %}
 {% block style %}
-.services a { background-color: rgb(255, 255, 255); color: #2065cc; gap:16px }
+.services a { background-color: rgb(255, 255, 255); color: #2065cc; gap:16px; }
 .services li { margin: 8px; }
+.services a.selected { background-color: rgb(139, 173, 241); }
 {% endblock style %}

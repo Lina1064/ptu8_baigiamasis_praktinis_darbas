@@ -12,7 +12,7 @@ body {
 }
 header {
     grid-area: header;
-    background-color: rgb(208, 215, 219);
+    background-color:  rgb(208, 215, 219);
     border-bottom: 2px solid rgb(139, 173, 241);
     width: 100%;
     flex-wrap: nowrap;
@@ -42,8 +42,6 @@ a {
     color: rgb(19, 73, 87);
     text-decoration: none;
     background-color: rgba(37, 11, 11, 0.2);
-
-   
 }
 header ul {
     display: flex;
@@ -62,7 +60,7 @@ header ul li a {
     border-radius: 8px;
 }
 .logo {
-    color: #041124;
+    color: #03317a;
     font-size: 125%;
     font-weight: 600;
     padding: 4px 16px;
@@ -78,8 +76,10 @@ header ul li a {
     border-radius: 8px;
     padding: 2px 4px;
 }
-
 .paginator .current {
     padding: 2px 4px;
     text-align: center;
+}
+.search-form {
+    margin-bottom: 1rem;
 }
