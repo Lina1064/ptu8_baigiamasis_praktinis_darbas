@@ -3,12 +3,19 @@
 {% block content %}
 <h1>Services</h1>
 {% if services %}
-<ul>
+<ul class="services">
     {% for service in services %}
         <li><a href="{% url 'service' service.id %}">{{ service.name }}</a>
     {% endfor %}
 </ul>
+{% with services as page_obj %}
+    {% include 'service/includes/paginator.html' %}
+{% endwith %}
 {% else %}
     <p>We do not currently provide any services</p>
 {% endif %}
 {% endblock content %}
+{% block style %}
+.services a { background-color: rgb(255, 255, 255); color: #2065cc; gap:16px }
+.services li { margin: 8px; }
+{% endblock style %}

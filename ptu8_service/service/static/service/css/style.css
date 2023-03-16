@@ -62,8 +62,24 @@ header ul li a {
     border-radius: 8px;
 }
 .logo {
-    color: #2065cc;
+    color: #041124;
     font-size: 125%;
     font-weight: 600;
     padding: 4px 16px;
+}
+.paginator {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.paginator a {
+    border: 1px solid #345;
+    border-radius: 8px;
+    padding: 2px 4px;
+}
+
+.paginator .current {
+    padding: 2px 4px;
+    text-align: center;
 }

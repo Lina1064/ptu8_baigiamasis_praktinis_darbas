@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from . import models 
 
@@ -15,7 +16,9 @@ def home(request):
     })
 
 def services(request):
-    services = models.Service.objects.all()
+    paginator = Paginator(models.Service.objects.all(), 10)
+    page_number = request.GET.get('page')
+    services = paginator.get_page(page_number)
     return render (request, 'service/services.html', {
         'services': services,
     })
