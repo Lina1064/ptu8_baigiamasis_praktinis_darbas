@@ -20,7 +20,7 @@ def services(request):
     query = request.GET.get('search')
     if query:
         queryset = queryset.filter(name__icontains=query)
-    paginator = Paginator(queryset.all(), 10)
+    paginator = Paginator(queryset.all(), 15)
     page_number = request.GET.get('page')
     services = paginator.get_page(page_number)
     return render (request, 'service/services.html', {

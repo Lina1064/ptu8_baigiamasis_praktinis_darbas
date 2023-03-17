@@ -21,7 +21,7 @@ header {
 main {
     grid-area: main;
     overflow: auto;
-    width: 100%;
+    width: 100%; 
 }
 footer {
     grid-area: footer;
@@ -60,10 +60,9 @@ header ul li a {
     border-radius: 8px;
 }
 .logo {
-    color: #03317a;
-    font-size: 125%;
-    font-weight: 600;
-    padding: 4px 16px;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
 }
 .paginator {
     display: flex;
@@ -82,4 +81,7 @@ header ul li a {
 }
 .search-form {
     margin-bottom: 1rem;
+}
+.schematic img {
+    max-width: 100%;
 }

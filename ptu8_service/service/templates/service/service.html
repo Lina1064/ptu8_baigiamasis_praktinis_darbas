@@ -4,8 +4,10 @@
 {% block content %}
 <h1>{{ service.name }}</h1>
 <p>{{ service.description|linebreaks }}</p>
+<div class="schematic">
 {% if service.schematic %}
-<img src="{{ service.schematic.url }}">
+    <img src="{{ service.schematic.url }}">
 {% endif %}
+</div>
 <h2></h2>
 {% endblock content %}
