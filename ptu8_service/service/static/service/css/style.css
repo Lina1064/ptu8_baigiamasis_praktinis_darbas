@@ -50,6 +50,7 @@ header ul {
     padding-inline-start: 0;
     margin: 8px 0;
     gap: 16px;
+    overflow-x: auto;
 }
 header ul li {
     display: inline-block;
@@ -58,6 +59,11 @@ header ul li a {
     padding: 8px 16px;
     display: block;
     border-radius: 8px;
+}
+header .user-info {
+    flex-grow: 1;
+    padding: 8px;
+    text-align: right;
 }
 .logo {
     max-width: 100%;
