@@ -34,3 +34,7 @@ def service(request, service_id):
     return render(request, 'service/service.html', {
         'service': service,
     })
+
+def contacts(request):
+    return render(request, 'service/contacts.html', {            
+    })

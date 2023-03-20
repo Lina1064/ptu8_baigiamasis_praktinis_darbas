@@ -29,6 +29,11 @@
         </ul>
     </div></header>
     <main><div class="container">{% block content %}{% endblock content %}</div></main>
-    <footer><div class="container"><p>&copy; 2023 Rabidus Team</p></div></footer>
+    <footer><div class="container">
+        <ul>
+            <span class="team"><li>&copy; 2023 Rabidus Team</li></span>
+            <li><a href="{% url 'contacts' %}">Contacts</a></li> 
+        </ul> 
+    </div></footer>
 </body>
 </html>

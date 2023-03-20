@@ -35,7 +35,7 @@ header .container, main .container, footer .container {
     margin: 0 auto;
     box-sizing: border-box;
 }
-main .container, footer.container {
+main .container {
     padding: 0 16px;
 }
 a {
@@ -43,7 +43,7 @@ a {
     text-decoration: none;
     background-color: rgba(37, 11, 11, 0.2);
 }
-header ul {
+header ul, footer ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -52,10 +52,10 @@ header ul {
     gap: 16px;
     overflow-x: auto;
 }
-header ul li {
+header ul li, footer ul li {
     display: inline-block;
 }
-header ul li a {
+header ul li a, footer ul li a {
     padding: 8px 16px;
     display: block;
     border-radius: 8px;
@@ -64,6 +64,9 @@ header .user-info {
     flex-grow: 1;
     padding: 8px;
     text-align: right;
+}
+footer .team {
+    padding: 8px;
 }
 .logo {
     max-width: 100%;
@@ -90,4 +93,8 @@ header .user-info {
 }
 .schematic img {
     max-width: 100%;
+}
+.contact-details {
+    padding: 10px;
+    line-height: 24px;
 }
