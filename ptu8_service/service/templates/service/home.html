@@ -1,40 +1,18 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load static i18n %}
 {% block title %}Welcome to {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>Welcome!</h1>
 <h3>Some information about our services:</h3>
-<ul>
+<ul class='statistics'>
     <li>{{ service_count }} services we provide</li>
     <li>We have {{ customer_count }} customers</li>
     <li>{{ done_order_count }} of completed orders</li>
 </ul>
-<div>
-    <canvas id="myChart"></canvas>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
-  <script>
-    const ctx = document.getElementById('myChart');
-  
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: [{% for data in service_data %} '{{ data.name }}', {% endfor %}],
-        datasets: [{
-          label: 'The prices of services',
-          data: [{% for data in service_data %} '{{ data.price }}', {% endfor %}],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  </script>
+<br>
+<h3>Our team:</h3>
+<img src="{% static 'service/img/team.png' %}">
 {% endblock content %}
+{% block style %}
+.statistics li { margin: 8px; }
+{% endblock style %}

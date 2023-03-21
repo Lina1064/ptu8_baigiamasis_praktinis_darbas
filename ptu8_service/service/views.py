@@ -2,11 +2,9 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from . import models 
 
-# Create your views here.
 
 def home(request):
     service_count = models.Service.objects.count()
-    service_data = models.Service.objects.all()
     customer_count = models.Customer.objects.count()
     done_order_count = models.Order.objects.filter(status='d').count()
 
@@ -14,7 +12,6 @@ def home(request):
         'service_count': service_count,
         'customer_count': customer_count,
         'done_order_count': done_order_count,
-        'service_data': service_data,
     })
 
 def services(request):

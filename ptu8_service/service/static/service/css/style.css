@@ -21,7 +21,7 @@ header {
 main {
     grid-area: main;
     overflow: auto;
-    width: 100%; 
+    width: 100%;
 }
 footer {
     grid-area: footer;
