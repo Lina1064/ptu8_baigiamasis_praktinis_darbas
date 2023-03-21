@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}My Orders in {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>My Orders</h1>
+{% if order_list %}
+    <table>
+        <thead>
+            <th>Date of order submission</th>
+            <th>Status</th>
+            <th>Total order price</th>
+        </thead>
+        <tbody>
+        {% for order in order_list %}
+           <tr><td class="text-center">{{ order.date }}</td>
+            <td class="text-center">{{ order.get_status_display }}</td>
+            <td class="text-center">{{ order.total_order_price }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>You do not have any orders yet.</p>
+{% endif %}
+{% endblock content %}

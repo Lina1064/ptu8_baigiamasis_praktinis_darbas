@@ -1,7 +1,9 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 import uuid
 
+User = get_user_model()
 
 class Customer(models.Model):
     first_name = models.CharField(_('first name'), max_length=50, db_index=True)
@@ -58,6 +60,14 @@ class Order(models.Model):
     )
     
     status = models.CharField(_('status'), max_length=1, choices=ORDER_STATUS, default='o')
+
+    client = models.ForeignKey(
+        User, 
+        verbose_name=_("client"), 
+        on_delete=models.SET_NULL,
+        related_name='orders',
+        null=True, blank=True,
+    )
 
     def __str__(self) -> str:
         return f"{self.date} {self.customer} {self.status} {self.total_order_price}"

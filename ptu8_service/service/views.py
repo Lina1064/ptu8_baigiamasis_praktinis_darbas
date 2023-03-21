@@ -1,5 +1,7 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
+from django.views import generic
 from . import models 
 
 
@@ -35,3 +37,13 @@ def service(request, service_id):
 def contacts(request):
     return render(request, 'service/contacts.html', {            
     })
+
+class UserOrderListView(LoginRequiredMixin, generic.ListView):
+    model = models.Order
+    template_name = 'service/user_order_list.html'
+    paginate_by = 10
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.filter(client=self.request.user)
+        return qs

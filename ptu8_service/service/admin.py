@@ -16,7 +16,7 @@ class ServiceOrderInline(admin.TabularInline):
     extra = 0
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('date', 'customer', 'status', 'total_order_price')
+    list_display = ('date', 'customer', 'status', 'total_order_price', 'client')
     list_filter = ('status', 'date')
     list_editable = ('status', )
     inlines = (ServiceOrderInline, )

@@ -18,6 +18,7 @@
             <li><a href="{% url 'services' %}">Services</a></li>
             {% if request.user.is_authenticated %}
             <span class="user-info">{{ request.user }}</span>
+            <li><a href="{% url 'user_orders' %}">My Orders</a></li>
             {% if request.user.is_superuser or request.user.is_staff %}
                 <li><a href="{% url 'admin:index' %}">Admin</a></li>
             {% endif %}
