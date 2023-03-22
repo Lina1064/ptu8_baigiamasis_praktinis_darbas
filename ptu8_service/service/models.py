@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from tinymce.models import HTMLField
 import uuid
 
 User = get_user_model()
@@ -24,7 +25,7 @@ class Customer(models.Model):
 class Service(models.Model):
     name = models.CharField(_('name'), max_length=100, db_index=True)
     price = models.DecimalField(_('price'), max_digits=8, decimal_places=2)
-    description = models.TextField(_('description'), max_length=4000, null=True, blank=True)
+    description = HTMLField(_('description'), max_length=4000, null=True, blank=True)
     schematic = models.ImageField(_('schematic'), upload_to='service/schematics/', null=True, blank=True)
 
     def __str__(self) -> str:

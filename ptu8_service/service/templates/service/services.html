@@ -21,7 +21,7 @@
       data: {
         labels: [{% for data in services %} '{{ data.name }}', {% endfor %}],
         datasets: [{
-          label: 'The prices of services',
+          label: '',
           data: [{% for data in services %} '{{ data.price }}', {% endfor %}],
           {% comment %} backgroundColor: [
           'rgba(255, 99, 132, 0.8)',
@@ -30,7 +30,8 @@
           'rgba(75, 192, 192, 0.8)',
           'rgba(54, 162, 235, 0.8)',
           'rgba(153, 102, 255, 0.8)',
-          'rgba(201, 203, 207, 0.8)'
+          'rgba(201, 203, 207, 0.8)',
+          'rgba(255, 165, 0, 0.8)'
         ],
         borderColor: [
           'rgb(255, 99, 132)',
@@ -39,12 +40,19 @@
           'rgb(75, 192, 192)',
           'rgb(54, 162, 235)',
           'rgb(153, 102, 255)',
-          'rgb(201, 203, 207)'
-        ], {% endcomment %}
+          'rgb(201, 203, 207)',
+          'rgba(255, 165, 0)'
+        ],  {% endcomment %}
         borderWidth: 1
         }]
       },
       options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'The prices of services'
+          }
+        },
         scales: {
           y: {
             beginAtZero: true,

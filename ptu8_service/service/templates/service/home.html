@@ -2,16 +2,74 @@
 {% load static i18n %}
 {% block title %}Welcome to {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>Welcome!</h1>
+<h1>Professional OEPM Testing</h1>
 <h3>Some information about our services:</h3>
 <ul class='statistics'>
     <li>{{ service_count }} services we provide</li>
     <li>We have {{ customer_count }} customers</li>
     <li>{{ done_order_count }} of completed orders</li>
 </ul>
-<br>
 <h3>Our team:</h3>
 <img src="{% static 'service/img/team.png' %}">
+<div class="home-chart">
+    <canvas id="myChart" width='450' heith="450"></canvas>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('myChart');
+    Chart.defaults.font.size = 14;
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: [{% for data in service_list %} '{{ data }}', {% endfor %}],
+        datasets: [{
+          label: '',
+          data: [{% for number in number_list %} '{{ number }}', {% endfor %}],
+          backgroundColor: [
+          'rgba(255, 99, 132, 0.8)',
+          'rgba(255, 159, 64, 0.8)',
+          'rgba(255, 205, 86, 0.8)',
+          'rgba(75, 192, 192, 0.8)',
+          'rgba(54, 162, 235, 0.8)',
+          'rgba(153, 102, 255, 0.8)',
+          'rgba(201, 203, 207, 0.8)',
+          'rgba(82, 20, 145, 0.8)',
+          'rgba(238, 130, 238, 0.8)',
+          'rgba((60, 179, 113, 0.8)',
+          'rgba(106, 154, 0, 0.8)'
+        ],
+        borderColor: [
+          'rgb(255, 99, 132)',
+          'rgb(255, 159, 64)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(54, 162, 235)',
+          'rgb(153, 102, 255)',
+          'rgb(201, 203, 207)',
+          'rgb(82, 20, 145)',
+          'rgb(238, 130, 238)',
+          'rgb(60, 179, 113)',
+          'rgb(106, 154, 0)'
+        ], 
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: false,
+        {% comment %} scales: {
+          y: {
+            beginAtZero: true,
+          }
+        }, {% endcomment %}
+        plugins: {
+          title: {
+            display: true,
+            text: 'The standard measurements that are most often ordered'
+          }
+      }
+      }
+    });
+  </script>
 {% endblock content %}
 {% block style %}
 .statistics li { margin: 8px; }

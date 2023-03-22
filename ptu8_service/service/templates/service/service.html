@@ -3,7 +3,7 @@
 {% block title %}{{ service.name }}{% endblock title %}
 {% block content %}
 <h1>{{ service.name }}</h1>
-<p>{{ service.description|linebreaks }}</p>
+{{ service.description|safe }}
 <div class="schematic">
 {% if service.schematic %}
     <img src="{{ service.schematic.url }}">
