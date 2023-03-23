@@ -1,8 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
-from . import models 
+from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
+from . import models
+from . import forms
 
 
 def home(request):
@@ -61,3 +64,36 @@ class UserOrderListView(LoginRequiredMixin, generic.ListView):
         qs = super().get_queryset()
         qs = qs.filter(client=self.request.user)
         return qs
+    
+def new_customer(request):
+    if request.method == 'POST':
+        form = forms.CustomerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path_info)
+    else:
+        form = forms.CustomerForm()
+    return render(request, 'service/new_customer.html', {
+        'form': form,
+    })
+
+def new_order(request):
+    if request.method == 'POST':
+        form = forms.OrderForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path_info)
+    else:
+        form = forms.CustomerForm()
+    return render(request, 'service/new_customer.html', {
+        'form': form,
+    })
+
+def new_serviceorder(request):
+    form = forms.ServiceOrderCreationForm()
+    if request.method == 'POST':
+        form = forms.ServiceOrderCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path_info)
+    return render(request, 'service/user_orders_list.html', {'form': form})
