@@ -76,24 +76,3 @@ def new_customer(request):
     return render(request, 'service/new_customer.html', {
         'form': form,
     })
-
-def new_order(request):
-    if request.method == 'POST':
-        form = forms.OrderForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(request.path_info)
-    else:
-        form = forms.CustomerForm()
-    return render(request, 'service/new_customer.html', {
-        'form': form,
-    })
-
-def new_serviceorder(request):
-    form = forms.ServiceOrderCreationForm()
-    if request.method == 'POST':
-        form = forms.ServiceOrderCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(request.path_info)
-    return render(request, 'service/user_orders_list.html', {'form': form})
