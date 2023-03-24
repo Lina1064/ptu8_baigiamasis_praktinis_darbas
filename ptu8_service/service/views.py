@@ -1,9 +1,10 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from . import models
 from . import forms
 
@@ -76,3 +77,20 @@ def new_customer(request):
     return render(request, 'service/new_customer.html', {
         'form': form,
     })
+
+class UserOrderCreateView(LoginRequiredMixin, generic.CreateView):
+    model = models.Order
+    template_name = 'service/user_order_create.html'
+    form_class = forms.UserOrderCreateForm
+    success_url = reverse_lazy('user_orders')
+
+    def get_initial(self):
+        initial = super().get_initial()
+        initial['status'] = 'o'
+        return initial
+
+    def form_valid(self, form):
+        form.instance.client = self.request.user
+        form.instance.status = 'o'
+        messages.success(self.request, 'New order successfully created.')
+        return super().form_valid(form)

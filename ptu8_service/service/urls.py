@@ -8,4 +8,5 @@ urlpatterns = [
     path('contacts/', views.contacts, name='contacts'),
     path('myorders/', views.UserOrderListView.as_view(), name='user_orders'),
     path('customer/', views.new_customer, name='customer_data'),
+    path('myorders/new', views.UserOrderCreateView.as_view(), name='user_order_create'),
 ]
