@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from . import models
@@ -31,7 +32,7 @@ def home(request):
         'customer_count': customer_count,
         'done_order_count': done_order_count,
         'service_list': service_list,
-        'number_list': number_list
+        'number_list': number_list,
     })
 
 def services(request):
@@ -92,5 +93,5 @@ class UserOrderCreateView(LoginRequiredMixin, generic.CreateView):
     def form_valid(self, form):
         form.instance.client = self.request.user
         form.instance.status = 'o'
-        messages.success(self.request, 'New order successfully created.')
+        messages.success(self.request, _("New order successfully created"))
         return super().form_valid(form)

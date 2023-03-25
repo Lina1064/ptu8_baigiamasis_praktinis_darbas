@@ -74,7 +74,7 @@ class Order(models.Model):
         return f"{self.date} {self.customer} {self.status} {self.total_order_price}"
 
     class Meta:
-        ordering = ['date']
+        ordering = ['-date']
         verbose_name =_('order')
         verbose_name_plural = _('orders') 
 

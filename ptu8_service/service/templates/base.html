@@ -17,17 +17,17 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'services' %}">Services</a></li>
             {% if request.user.is_authenticated %}
-            <span class="user-info"><a href="{% url 'profile_detail_active' %}">{{ request.user }}</span>
-            <li><a href="{% url 'user_orders' %}">My Orders</a></li>
-            {% if request.user.is_superuser or request.user.is_staff %}
-                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li class="user-info"><a href="{% url 'profile_detail_active' %}">{{ request.user }}</a></li>
+                <li><a href="{% url 'user_orders' %}">My Orders</a></li>
+                {% if request.user.is_superuser or request.user.is_staff %}
+                    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                {% endif %}
+                <li><a href="{% url 'logout' %}">Log out</a></li>
+            {% else %}
+                <span class="user-info"></span>
+                <li><a href="{% url 'login' %}{% if request.path != '/accounts/logout/' %}?next={{ request.path }}{% endif %}">Log in</a></li>
+                <li><a href="{% url 'register' %}">Sign up</a></li>
             {% endif %}
-            <li><a href="{% url 'logout' %}">Log out</a></li>
-        {% else %}
-            <span class="user-info"></span>
-            <li><a href="{% url 'login' %}{% if request.path != '/accounts/logout/' %}?next={{ request.path }}{% endif %}">Log in</a></li>
-            <li><a href="{% url 'register' %}">Sign up</a></li>
-        {% endif %}
         </ul>
     </div></header>
     <main><div class="container">

@@ -1,27 +1,32 @@
 {% extends 'base.html' %}
 {% block title %}My Orders in {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>My Orders</h1>
-<img src="{{ request.user.profile.photo.url }}" class="user-profile-img">
-<img class="rounded-circle" src="{{ request.client.profile.photo.url }}">
-{% if order_list %}
-    <table>
-        <thead>
-            <th>Date of order submission</th>
-            <th>Status</th>
-            <th>Total order price</th>
-        </thead>
-        <tbody>
-        {% for order in order_list %}
-           <tr><td class="text-center">{{ order.date }}</td>
-            <td class="text-center">{{ order.get_status_display }}</td>
-            <td class="text-center">{{ order.total_order_price }}</td></tr>
-        {% endfor %}
-        </tbody>
-    </table>
-{% else %}
-    <p>You do not have any orders yet.</p>
-{% endif %}
+<img src="{{ request.user.profile.photo.url }}" class="user-profile-img" width="100" height="100" gap="20" >
+<h1 >My Orders</h1>
+<div class="user-orders-table">
+    {% if order_list %}
+        <table>
+            <thead>
+                <th>Date of order submission</th>
+                <th>Status</th>
+                <th>Total order price</th>
+            </thead>
+            <tbody>
+            {% for order in order_list %}
+            <tr><td class="text-center">{{ order.date }}</td>
+                <td class="text-center">{{ order.get_status_display }}</td>
+                <td class="text-center">{{ order.total_order_price }}</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+        <p>You do not have any orders yet.</p>
+    {% endif %}
+</div>
 <br>
 <h3><a href="{% url 'user_order_create' %}">New Order</a></h3>
 {% endblock content %}
+{% block style %}
+h1 { text-align: center; }
+{% endblock style %}
