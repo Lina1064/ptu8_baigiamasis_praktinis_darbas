@@ -2,6 +2,8 @@
 {% block title %}My Orders in {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>My Orders</h1>
+<img src="{{ request.user.profile.photo.url }}" class="user-profile-img">
+<img class="rounded-circle" src="{{ request.client.profile.photo.url }}">
 {% if order_list %}
     <table>
         <thead>
@@ -20,4 +22,6 @@
 {% else %}
     <p>You do not have any orders yet.</p>
 {% endif %}
+<br>
+<h3><a href="{% url 'user_order_create' %}">New Order</a></h3>
 {% endblock content %}

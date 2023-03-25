@@ -17,7 +17,7 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'services' %}">Services</a></li>
             {% if request.user.is_authenticated %}
-            <span class="user-info">{{ request.user }}</span>
+            <span class="user-info"><a href="{% url 'profile_detail_active' %}">{{ request.user }}</span>
             <li><a href="{% url 'user_orders' %}">My Orders</a></li>
             {% if request.user.is_superuser or request.user.is_staff %}
                 <li><a href="{% url 'admin:index' %}">Admin</a></li>
