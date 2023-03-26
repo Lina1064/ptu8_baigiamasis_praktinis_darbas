@@ -13,7 +13,7 @@
             <form method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
-            <input class= "btn btn-success btn-block" type="submit" value="Add">
+            <input class= "btn btn-success btn-block" type="submit" value="{% trans "add"|capfirst %}">
             </form>
         </div>
     </div>

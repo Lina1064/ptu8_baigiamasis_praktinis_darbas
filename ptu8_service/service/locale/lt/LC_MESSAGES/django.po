@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-26 16:24+0300\n"
+"POT-Creation-Date: 2023-03-26 17:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -241,6 +241,7 @@ msgstr "mes turime"
 msgid "of completed orders"
 msgstr "įvyktytų užsakymų"
 
+#: .\service\templates\service\includes\search.html:3
 #: .\service\templates\service\includes\search.html:4
 msgid "search"
 msgstr "paieška"
@@ -260,6 +261,10 @@ msgstr "asmeniniai duomenys"
 #: .\service\templates\service\new_customer.html:11
 msgid "All fields marked with * are required"
 msgstr "Visi * pažymėti laukai yra būtini"
+
+#: .\service\templates\service\new_customer.html:16
+msgid "add"
+msgstr "siųsti"
 
 #: .\service\templates\service\services.html:3
 msgid "services in"

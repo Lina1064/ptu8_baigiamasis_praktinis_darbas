@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block title %}{% trans "my orders in"|title %} {{ block.super }}{% endblock title %}
 {% block content %}
-<img src="{{ request.user.profile.photo.url }}" class="user-profile-img" width="100" height="100" gap="20" >
+<img src="{{ request.user.profile.photo.url }}" class="user-profile-img" width="100" height="100" gap="20">
 <h1 >{% trans "my orders"|title %}</h1>
 <div class="user-orders-table">
     {% if order_list %}
@@ -14,7 +14,8 @@
             </thead>
             <tbody>
             {% for order in order_list %}
-            <tr><td class="text-center">{{ order.date }}</td>
+            <tr {% if order.status == 'o' %}class="ordered"{% endif %} >
+                <td class="text-center">{{ order.date }}</td>
                 <td class="text-center">{{ order.get_status_display }}</td>
                 <td class="text-center">{{ order.total_order_price }}</td></tr>
             {% endfor %}
