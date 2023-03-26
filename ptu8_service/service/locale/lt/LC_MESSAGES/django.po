@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-26 16:24+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+
+#: .\service\models.py:10
+msgid "first name"
+msgstr "vardas"
+
+#: .\service\models.py:11
+msgid "last name"
+msgstr "pavardė"
+
+#: .\service\models.py:12 .\service\templates\service\contacts.html:18
+msgid "address"
+msgstr "adresas"
+
+#: .\service\models.py:13
+msgid "email"
+msgstr "e-paštas"
+
+#: .\service\models.py:14
+msgid "phone number"
+msgstr "telefonas"
+
+#: .\service\models.py:21 .\service\models.py:45
+msgid "customer"
+msgstr "klientas"
+
+#: .\service\models.py:22 .\service\templates\service\home.html:10
+msgid "customers"
+msgstr "klientai(-ų)"
+
+#: .\service\models.py:26
+msgid "name"
+msgstr "pavadinimas"
+
+#: .\service\models.py:27
+msgid "price"
+msgstr "kaina"
+
+#: .\service\models.py:28
+msgid "description"
+msgstr "aprašymas"
+
+#: .\service\models.py:29
+msgid "schematic"
+msgstr "schema"
+
+#: .\service\models.py:36 .\service\models.py:87
+#: .\service\templates\base.html:11
+msgid "service"
+msgstr "paslauga"
+
+#: .\service\models.py:37 .\service\templates\base.html:21
+#: .\service\templates\service\services.html:5
+msgid "services"
+msgstr "paslaugos"
+
+#: .\service\models.py:40
+msgid "order date"
+msgstr "užsakymo data"
+
+#: .\service\models.py:47 .\service\models.py:96
+#: .\service\templates\service\user_order_list.html:13
+msgid "total order price"
+msgstr "bendra užsakymo kaina"
+
+#: .\service\models.py:57
+msgid "ordered"
+msgstr "užsakytas"
+
+#: .\service\models.py:58
+msgid "in process"
+msgstr "vykdomas"
+
+#: .\service\models.py:59
+msgid "done"
+msgstr "įvykdytas"
+
+#: .\service\models.py:60
+msgid "cancelled"
+msgstr "atšauktas"
+
+#: .\service\models.py:63 .\service\templates\service\user_order_list.html:12
+msgid "status"
+msgstr "statusas"
+
+#: .\service\models.py:67
+msgid "client"
+msgstr "užsakovas"
+
+#: .\service\models.py:78 .\service\templates\service\user_order_create.html:9
+msgid "order"
+msgstr "užsakymas"
+
+#: .\service\models.py:79 .\service\models.py:93
+msgid "orders"
+msgstr "užsakymai"
+
+#: .\service\models.py:95
+msgid "quantity"
+msgstr "kiekis"
+
+#: .\service\models.py:107
+msgid "service order"
+msgstr "paslaugos užsakymas"
+
+#: .\service\models.py:108
+msgid "service orders"
+msgstr "paslaugos užsakymai"
+
+#: .\service\templates\base.html:20
+msgid "home"
+msgstr "pradžia"
+
+#: .\service\templates\base.html:24
+#: .\service\templates\service\user_order_list.html:6
+msgid "my orders"
+msgstr "mano užsakymai"
+
+#: .\service\templates\base.html:26
+msgid "admin"
+msgstr "adminas"
+
+#: .\service\templates\base.html:28
+msgid "log out"
+msgstr "atsijungti"
+
+#: .\service\templates\base.html:31
+msgid "log in"
+msgstr "prisijungti"
+
+#: .\service\templates\base.html:32
+msgid "sign up"
+msgstr "registracija"
+
+#: .\service\templates\base.html:56
+msgid "team"
+msgstr "komanda"
+
+#: .\service\templates\base.html:57 .\service\templates\service\contacts.html:5
+msgid "contacts"
+msgstr "kontaktai"
+
+#: .\service\templates\service\contacts.html:3
+msgid "contacts in"
+msgstr "kontaktai"
+
+#: .\service\templates\service\contacts.html:7
+msgid "main office"
+msgstr "pagrindinis biuras"
+
+#: .\service\templates\service\contacts.html:9
+msgid "phone"
+msgstr "telefonas"
+
+#: .\service\templates\service\contacts.html:11
+msgid "general inquiries"
+msgstr "bendros užklausos"
+
+#: .\service\templates\service\contacts.html:13
+msgid "sales inquiries"
+msgstr "pardavimų užklausos"
+
+#: .\service\templates\service\contacts.html:15
+msgid "skype"
+msgstr "skype"
+
+#: .\service\templates\service\contacts.html:20
+#: .\service\templates\service\contacts.html:36
+msgid "lithuania"
+msgstr "lietuva"
+
+#: .\service\templates\service\contacts.html:24
+msgid "billing information"
+msgstr "atsiskaitymo informacija"
+
+#: .\service\templates\service\contacts.html:26
+msgid "company name"
+msgstr "įmonės pavadinimas"
+
+#: .\service\templates\service\contacts.html:28
+msgid "company code"
+msgstr "įmonės kodas"
+
+#: .\service\templates\service\contacts.html:34
+msgid "billing address"
+msgstr "atsiskaitymo adresas"
+
+#: .\service\templates\service\contacts.html:39
+msgid "Bank account"
+msgstr "Banko sąskaita"
+
+#: .\service\templates\service\contacts.html:43
+msgid "bank"
+msgstr "bankas"
+
+#: .\service\templates\service\contacts.html:45
+msgid "SWIFT code"
+msgstr "SWIFT kodas"
+
+#: .\service\templates\service\home.html:3
+msgid "welcome to"
+msgstr "sveiki atvykę į"
+
+#: .\service\templates\service\home.html:6
+msgid "professional OEPM testing"
+msgstr "profesionalus OEPM testavimas"
+
+#: .\service\templates\service\home.html:7
+msgid "some information about our services"
+msgstr "šiek tiek informacijos apie mūsų psalaugas"
+
+#: .\service\templates\service\home.html:9
+msgid "services we provide"
+msgstr "teikiame psalaugų"
+
+#: .\service\templates\service\home.html:10
+msgid "we have "
+msgstr "mes turime"
+
+#: .\service\templates\service\home.html:11
+msgid "of completed orders"
+msgstr "įvyktytų užsakymų"
+
+#: .\service\templates\service\includes\search.html:4
+msgid "search"
+msgstr "paieška"
+
+#: .\service\templates\service\includes\search.html:5
+msgid "reset"
+msgstr "atstatyti"
+
+#: .\service\templates\service\new_customer.html:4
+msgid "new customer"
+msgstr "naujas klientas"
+
+#: .\service\templates\service\new_customer.html:10
+msgid "personal data"
+msgstr "asmeniniai duomenys"
+
+#: .\service\templates\service\new_customer.html:11
+msgid "All fields marked with * are required"
+msgstr "Visi * pažymėti laukai yra būtini"
+
+#: .\service\templates\service\services.html:3
+msgid "services in"
+msgstr "paslaugos"
+
+#: .\service\templates\service\services.html:75
+msgid "We do not currently provide any services matching your query."
+msgstr "Šiuo metu neteikiame jokių paslaugų, atitinkančių jūsų užklausą."
+
+#: .\service\templates\service\user_order_create.html:3
+msgid "ordering at"
+msgstr "užsakymo data"
+
+#: .\service\templates\service\user_order_create.html:5
+msgid "create new order"
+msgstr "sukurti naują užsakymą"
+
+#: .\service\templates\service\user_order_list.html:3
+msgid "my orders in"
+msgstr "mano užsakymai"
+
+#: .\service\templates\service\user_order_list.html:11
+msgid "date of order submission"
+msgstr "užsakymo pateikimo data"
+
+#: .\service\templates\service\user_order_list.html:25
+msgid "You do not have any orders yet."
+msgstr "Jūs dar neturite jokių užsakymų."
+
+#: .\service\templates\service\user_order_list.html:29
+msgid "new order"
+msgstr "naujas užsakymas"
+
+#: .\service\views.py:96
+msgid "New order successfully created"
+msgstr "Naujas užsakymas sėkmingai sukurtas"

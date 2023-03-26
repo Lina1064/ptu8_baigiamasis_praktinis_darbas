@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
-{% block title %}My Orders in {{ block.super }}{% endblock title %}
+{% load i18n %}
+{% block title %}{% trans "my orders in"|title %} {{ block.super }}{% endblock title %}
 {% block content %}
 <img src="{{ request.user.profile.photo.url }}" class="user-profile-img" width="100" height="100" gap="20" >
-<h1 >My Orders</h1>
+<h1 >{% trans "my orders"|title %}</h1>
 <div class="user-orders-table">
     {% if order_list %}
         <table>
             <thead>
-                <th>Date of order submission</th>
-                <th>Status</th>
-                <th>Total order price</th>
+                <th>{% trans "date of order submission"|capfirst %}</th>
+                <th>{% trans "status"|capfirst %}</th>
+                <th>{% trans "total order price"|capfirst %}</th>
             </thead>
             <tbody>
             {% for order in order_list %}
@@ -21,11 +22,11 @@
         </table>
 
     {% else %}
-        <p>You do not have any orders yet.</p>
+        <p>{% trans "You do not have any orders yet." %}</p>
     {% endif %}
 </div>
 <br>
-<h3><a href="{% url 'user_order_create' %}">New Order</a></h3>
+<h3><a href="{% url 'user_order_create' %}">{% trans "new order"|title %}</a></h3>
 {% endblock content %}
 {% block style %}
 h1 { text-align: center; }

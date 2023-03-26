@@ -1,47 +1,48 @@
 {% extends 'base.html' %}
-{% block title %}Contacts in {{ block.super }}{% endblock title %}
+{% load i18n %}
+{% block title %}{% trans "contacts in"|capfirst %} {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>Contacts</h1>
+<h1>{% trans "contacts"|capfirst %}</h1>
 <div class="contact-details">
-<h3>Main office</h3>
+<h3>{% trans "main office"|capfirst %}</h3>
     <p>
-        Phone: +370 111 10101
+        {% trans "phone"|capfirst %}: +370 111 10101
         <br>
-        General inquiries: info@rabidus.com
+        {% trans "general inquiries"|capfirst %}: info@rabidus.com
         <br>
-        Sales inquiries: sales@rabidus.com
+        {% trans "sales inquiries"|capfirst %}: sales@rabidus.com
         <br>
-        Skype: oepm-service
+        {% trans "skype"|capfirst %}: oepm-service
     </p>
     <p>
-        Address: Interneto g. 10, LT-10101,
+        {% trans "address"|capfirst %}: Interneto g. 10, LT-10101,
         <br>
-        Vilnius, Lithuania
+        Vilnius, {% trans "lithuania"|capfirst %}
     </p>
 </div>
 <div class="contact-details">
-    <h3>Billing information</h3>
+    <h3>{% trans "billing information"|capfirst %}</h3>
     <p>
-        Company name: Rabidus, UAB
+        {% trans "company name"|capfirst %}: Rabidus, UAB
         <br>
-        Comapny code: 101010101
+        {% trans "company code"|capfirst %}: 101010101
         <br>
         VAT: LT100001010101
         <br>
     </p>
     <p>
-        Billing address: Kosmoso 1-11, LT-11111
+        {% trans "billing address"|capfirst %}: Kosmoso 1-11, LT-11111
         <br>
-        Vilnius, Lithuania
+        Vilnius, {% trans "lithuania"|capfirst %}
     </p>
     <p>
-        Bank account (IBAN):
+        {% trans "Bank account"|capfirst %} (IBAN):
         <br>
         LT10 1010 1010 1010 1010
         <br>
-        Bank: Swedbank AB
+        {% trans "bank"|capfirst %}: Swedbank AB
         <br>
-        SWIFT code: HABALT11
+        {% trans "SWIFT code" %}: HABALT11
     </p>
 </div>
 {% endblock content %}

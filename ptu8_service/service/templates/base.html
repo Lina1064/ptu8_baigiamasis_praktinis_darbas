@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}OEPM Service{% endblock title %}</title>
+    <title>{% block title %}OEPM {% trans "service"|capfirst %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'admin/css/fonts.css' %}">
     <link rel="stylesheet" href="{% static 'service/css/style.css' %}">
     <style>{% block style %}{% endblock style %}</style>
@@ -14,20 +17,29 @@
     <header><div class="container">
         <ul>
             <li class="logo"><img src="{% static 'service/img/service_logo.png' %}"></li>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'home' %}">{% trans "home"|capfirst %}</a></li>
+            <li><a href="{% url 'services' %}">{% trans "services"|capfirst %}</a></li>
             {% if request.user.is_authenticated %}
                 <li class="user-info"><a href="{% url 'profile_detail_active' %}">{{ request.user }}</a></li>
-                <li><a href="{% url 'user_orders' %}">My Orders</a></li>
+                <li><a href="{% url 'user_orders' %}">{% trans "my orders"|capfirst %}</a></li>
                 {% if request.user.is_superuser or request.user.is_staff %}
-                    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                    <li><a href="{% url 'admin:index' %}">{% trans "admin"|capfirst %}</a></li>
                 {% endif %}
-                <li><a href="{% url 'logout' %}">Log out</a></li>
+                <li><a href="{% url 'logout' %}">{% trans "log out"|capfirst %}</a></li>
             {% else %}
                 <span class="user-info"></span>
-                <li><a href="{% url 'login' %}{% if request.path != '/accounts/logout/' %}?next={{ request.path }}{% endif %}">Log in</a></li>
-                <li><a href="{% url 'register' %}">Sign up</a></li>
+                <li><a href="{% url 'login' %}{% if request.path != '/accounts/logout/' %}?next={{ request.path }}{% endif %}">{% trans "log in"|capfirst %}</a></li>
+                <li><a href="{% url 'register' %}">{% trans "sign up"|capfirst %}</a></li>
             {% endif %}
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ redirect_to }}">
+                <select name="language" onchange="this.form.submit();">
+                    {% for lang in LANGUAGES %}
+                        <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>{{ lang.1 }}</option>
+                    {% endfor %}
+                </select>
+            </form>
         </ul>
     </div></header>
     <main><div class="container">
@@ -41,8 +53,8 @@
         {% block content %}{% endblock content %}</div></main>
     <footer><div class="container">
         <ul>
-            <span class="team"><li>&copy; 2023 Rabidus Team</li></span>
-            <li><a href="{% url 'contacts' %}">Contacts</a></li> 
+            <span class="team"><li>&copy; 2023 Rabidus {% trans "team"|capfirst %}</li></span>
+            <li><a href="{% url 'contacts' %}">{% trans "contacts"|capfirst %}</a></li> 
         </ul> 
     </div></footer>
 </body>

@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load static i18n %}
-{% block title %}Welcome to {{ block.super }}{% endblock title %}
+{% block title %}{% trans "welcome to"|capfirst %} {{ block.super }}{% endblock title %}
 {% block content %}
 <div class="row mt-3 pt-3">
-<h1>Professional OEPM Testing</h1>
-<h3>Some information about our services:</h3>
+<h1>{% trans "professional OEPM testing"|capfirst %}</h1>
+<h3>{% trans "some information about our services"|capfirst %}:</h3>
 <ul class='statistics'>
-    <li>{{ service_count }} services we provide</li>
-    <li>We have {{ customer_count }} customers</li>
-    <li>{{ done_order_count }} of completed orders</li>
+    <li>{{ service_count }} {% trans "services we provide" %}</li>
+    <li>{% trans "we have "|capfirst %} {{ customer_count }} {% trans "customers" %}</li>
+    <li>{{ done_order_count }} {% trans "of completed orders" %}</li>
 </ul>
 <br>
 {% comment %} <h3>Our team:</h3>

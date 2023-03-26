@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-{% block title %}{{ request.user }} profile at {{ block.super }}{% endblock title %}
+{% load i18n %}
+{% block title %}{{ request.user }} {% trans "profile at"| %} {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>{{ request.user }}</h1>
 <img class="user-profile-img" src="{{ request.user.profile.photo.url }}">
@@ -7,7 +8,7 @@
     <h3>{{ request.user.first_name }} {{ request.user.last_name }}</h3>
 {% endif %}
 {% if object.user == request.user %}
-    <p>email: {{ object.user.email }}</p>
-    <p><a href="{% url 'profile_update' %}">update your profile</a></p>
+    <p>{% trans "email" %}: {{ object.user.email }}</p>
+    <p><a href="{% url 'profile_update' %}">{% trans "update your profile" %}</a></p>
 {% endif %}
 {% endblock content %}

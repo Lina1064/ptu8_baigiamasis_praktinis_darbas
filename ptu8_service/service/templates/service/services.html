@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-{% block title %}Services in {{ block.super }}{% endblock title %}
+{% load static i18n %}
+{% block title %}{% trans "services in"|capfirst %} {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>Services</h1>
+<h1>{% trans "services"|capfirst %}</h1>
 {% include 'service/includes/search.html' %}
 {% if services %}
 <ul class="services">
@@ -70,7 +71,7 @@
     {% include 'service/includes/paginator.html' %}
 {% endwith %}
 {% else %}
-    <p>We do not currently provide any services matching your query.</p>
+    <p>{% trans "We do not currently provide any services matching your query." %}</p>
 {% endif %}
 {% endblock content %}
 {% block style %}

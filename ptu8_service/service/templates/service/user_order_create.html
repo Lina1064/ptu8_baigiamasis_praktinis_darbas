@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
-{% block title %}Ordering at {{ block.super }}{% endblock title %}
+{% load i18n %}
+{% block title %}{% trans "ordering at"|capfirst %} {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>Create new order</h1>
+<h1>{% trans "create new order"|capfirst %}</h1>
 <form method="post" action="{{ request.path }}">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Order</button>
+    <button type="submit">{% trans "order"|capfirst %}</button>
 </form>
 {% endblock content %}
