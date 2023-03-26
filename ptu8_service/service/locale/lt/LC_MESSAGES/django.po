@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-26 17:02+0300\n"
+"POT-Creation-Date: 2023-03-26 20:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -241,6 +241,30 @@ msgstr "mes turime"
 msgid "of completed orders"
 msgstr "įvyktytų užsakymų"
 
+#: .\service\templates\service\home.html:76
+msgid "have questions?"
+msgstr "turite klausimų?"
+
+#: .\service\templates\service\home.html:76
+msgid "contact us"
+msgstr "susisiekite su mumis"
+
+#: .\service\templates\service\home.html:76
+msgid "or leave your"
+msgstr "arba palikite mums"
+
+#: .\service\templates\service\home.html:76
+msgid "contact details"
+msgstr "kontaktus"
+
+#: .\service\templates\service\home.html:76
+msgid "now and a member of our team will contact you shortly."
+msgstr "dabar ir mūsų komandos narys netrukus su jumis susisieks."
+
+#: .\service\templates\service\home.html:77
+msgid "our team:"
+msgstr "mūsų komanda"
+
 #: .\service\templates\service\includes\search.html:3
 #: .\service\templates\service\includes\search.html:4
 msgid "search"
@@ -290,11 +314,11 @@ msgstr "mano užsakymai"
 msgid "date of order submission"
 msgstr "užsakymo pateikimo data"
 
-#: .\service\templates\service\user_order_list.html:25
+#: .\service\templates\service\user_order_list.html:26
 msgid "You do not have any orders yet."
 msgstr "Jūs dar neturite jokių užsakymų."
 
-#: .\service\templates\service\user_order_list.html:29
+#: .\service\templates\service\user_order_list.html:30
 msgid "new order"
 msgstr "naujas užsakymas"
 

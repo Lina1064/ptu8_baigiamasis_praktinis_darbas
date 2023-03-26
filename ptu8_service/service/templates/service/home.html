@@ -11,8 +11,6 @@
     <li>{{ done_order_count }} {% trans "of completed orders" %}</li>
 </ul>
 <br>
-{% comment %} <h3>Our team:</h3>
-<img src="{% static 'service/img/team.png' %}"> {% endcomment %}
 <div class="home-chart">
       <canvas id="myChart" width='500' heith="500"></canvas>
     </div>
@@ -73,7 +71,10 @@
       });
     </script>
   </div>
-</div>
+  <br>
+<h3>{% trans "have questions?"|capfirst %} <a href="{% url 'contacts' %}"> {% trans "contact us" %}</a> {% trans "or leave your" %} <a href="{% url 'customer_data' %}"> {% trans "contact details" %}</a> {% trans "now and a member of our team will contact you shortly." %}</h3>
+<h3>{% trans "our team:"|capfirst %}</h3>
+<img src="{% static 'service/img/team.png' %}">
 {% endblock content %}
 {% block style %}
 .statistics li { margin: 8px; }

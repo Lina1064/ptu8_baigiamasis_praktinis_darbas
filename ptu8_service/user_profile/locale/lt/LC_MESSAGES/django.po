@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-26 16:38+0300\n"
+"POT-Creation-Date: 2023-03-26 20:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,7 +167,7 @@ msgid "email"
 msgstr "e-paštas"
 
 #: .\user_profile\templates\user_profile\detail.html:12
-#: .\user_profile\templates\user_profile\update.html:11
+#: .\user_profile\templates\user_profile\update.html:12
 msgid "update your profile"
 msgstr "atnaujinti savo profilį"
 
@@ -214,6 +214,6 @@ msgstr "atnaujinimas"
 msgid "profile"
 msgstr "vartotojo profilis"
 
-#: .\user_profile\templates\user_profile\update.html:16
+#: .\user_profile\templates\user_profile\update.html:17
 msgid "update"
 msgstr "atnaujinti"

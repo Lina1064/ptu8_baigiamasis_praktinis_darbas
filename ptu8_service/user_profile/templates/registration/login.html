@@ -13,3 +13,6 @@
 </form>
 <p><a href="{% url 'password_reset' %}">{% trans "Forgot password?" %}</a></p>
 {% endblock content %}
+{% block style %}
+a { padding: 0 8px; border-radius: 0.5rem; }
+{% endblock style %}
